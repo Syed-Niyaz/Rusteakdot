@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+@theme {
+  /* ── Luminous Rusteak Palette (from image) ── */
+  --color-cream: #faf8f5;
+  --color-cream-light: #fdfcfb;
+  --color-cream-soft: #f4f0e8;
+  --color-cream-dark: #ebe5d8;
+
+  --color-gold: #c59e51;
+  --color-gold-dark: #a87932;
+  --color-gold-light: #dfc285;
+  --color-gold-pale: #f7eedc;
+
+  --color-ink: #181715;
+  --color-ink-muted: #6e6a62;
+  --color-ink-faint: #a6a197;
+
+  --color-hairline: #e7e2d6;
+  --color-hairline-gold: rgba(197, 158, 81, 0.25);
+
+  /* ── Typography ── */
+  --font-heading: var(--font-playfair), "Playfair Display", Georgia, serif;
+  --font-serif-sub: var(--font-cormorant), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-inter), "Inter", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(197, 158, 81, 0.25);
+    color: var(--color-ink);
+  }
+
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+}
+
+@layer components {
+
+  /* ── Typography ── */
+  .font-serif-title {
+    font-family: var(--font-heading);
+    letter-spacing: -0.02em;
+  }
+
+  .font-cormorant {
+    font-family: var(--font-serif-sub);
+  }
+
+  .luxury-eyebrow {
+    font-size: 0.6875rem;
+    line-height: 1;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+  }
+
+  .luxury-rule {
+    height: 1px;
+    background-color: var(--color-hairline);
+  }
+
+  /* ── Gold Accent Lines ── */
+  .gold-divider {
+    height: 1px;
+    background: linear-gradient(90deg,
+        transparent 0%,
+        rgba(197, 158, 81, 0.4) 25%,
+        rgba(197, 158, 81, 0.7) 50%,
+        rgba(197, 158, 81, 0.4) 75%,
+        transparent 100%);
+  }
+
+  /* ── The Image Button: Caramel Gold Pill ── */
+  .btn-explore {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.85rem 2rem;
+    border-radius: 9999px;
+    background: linear-gradient(135deg, #b58337 0%, #9e6d24 100%);
+    color: #ffffff;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    box-shadow: 0 4px 18px rgba(168, 121, 50, 0.28);
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .btn-explore:hover {
+    background: linear-gradient(135deg, #c59141 0%, #ab782b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(168, 121, 50, 0.36);
+  }
+
+  .btn-gold-outline {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    padding: 0.85rem 2rem;
+    border-radius: 9999px;
+    border: 1px solid rgba(197, 158, 81, 0.6);
+    background: transparent;
+    color: var(--color-ink);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+  }
+
+  .btn-gold-outline:hover {
+    border-color: var(--color-gold);
+    background-color: rgba(197, 158, 81, 0.08);
+    color: var(--color-gold-dark);
+  }
+
+  /* ── Right-Side Vertical Indicator Dots (from image) ── */
+  .indicator-dot-solid {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: #c59e51;
+    box-shadow: 0 0 8px rgba(197, 158, 81, 0.4);
+    transition: transform 0.3s ease;
+  }
+
+  .indicator-dot-ring {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    border: 1.5px solid #a8a296;
+    background-color: transparent;
+    transition: all 0.3s ease;
+  }
+
+  .indicator-dot-ring:hover {
+    border-color: #c59e51;
+    transform: scale(1.15);
+  }
+
+  /* ── BIG Sofa Sequence Stage ── */
+  .sequence-stage {
+    height: 100vh;
+    height: 100svh;
+  }
+
+  .sequence-canvas-shell {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: min(98vw, 1680px);
+    width: min(98vw, 1680px, calc(92svh * 1.7778));
+    aspect-ratio: 16 / 9;
+    transform: translate(-50%, -50%);
+  }
+
+  /* ── Card Styles ── */
+  .luxury-card {
+    background-color: #ffffff;
+    border: 1px solid var(--color-hairline);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .luxury-card:hover {
+    border-color: rgba(197, 158, 81, 0.4);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 40px -15px rgba(168, 121, 50, 0.1);
+  }
+}
+
+/* ── Reduced motion ── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
