@@ -27,6 +27,23 @@ export function Footer() {
               <span>•</span>
               <span>ELEGANCE</span>
             </div>
+
+            {/* Social Links */}
+            <div className="mt-5 flex items-center gap-3">
+              <a
+                href="https://www.instagram.com/rusteakdot?utm_source=ig_web_button_share_sheet&vrfl=ZDNlZDc0"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="RUSTEAK DOT on Instagram"
+                className="w-9 h-9 rounded-full bg-white/5 hover:bg-gradient-to-tr hover:from-[#f9ce34] hover:via-[#ee2a7b] hover:to-[#6228d7] border border-white/10 hover:border-transparent flex items-center justify-center text-[#9e998f] hover:text-white transition-all duration-300 group"
+              >
+                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+            </div>
           </div>
 
           {/* Quick Links */}
@@ -38,17 +55,23 @@ export function Footer() {
               <Link href="#hero" className="hover:text-gold transition-colors">
                 Overview
               </Link>
-              <Link href="#collection" className="hover:text-gold transition-colors">
-                Curated Suites
+              <Link href="/about" className="hover:text-gold transition-colors">
+                About Us
               </Link>
-              <Link href="#craftsmanship" className="hover:text-gold transition-colors">
-                Heritage Craft
+              <Link href="/vision" className="hover:text-gold transition-colors">
+                Vision
               </Link>
-              <Link href="#features" className="hover:text-gold transition-colors">
-                Wood & Brass Specs
+              <Link href="/catalog" className="hover:text-gold transition-colors">
+                Bespoke Catalog
               </Link>
-              <Link href="#contact" className="hover:text-gold transition-colors">
-                Showroom Visit
+              <Link href="/#services" className="hover:text-gold transition-colors">
+                Services &amp; Custom
+              </Link>
+              <Link href="/before-after" className="hover:text-gold transition-colors">
+                Before &amp; After
+              </Link>
+              <Link href="/clients" className="hover:text-gold transition-colors">
+                Clients &amp; Enquiries
               </Link>
             </nav>
           </div>
@@ -84,7 +107,7 @@ export function Footer() {
                 Near Bombay Motors Circle, Jodhpur, Rajasthan.
               </p>
               <p className="pt-2 text-gold">
-                +91 (0) 291 260 0000 / studio@rusteakdot.com
+                +91 9530182514 / studio@rusteakdot.com
               </p>
             </div>
           </div>
@@ -96,7 +119,20 @@ export function Footer() {
             © 2025 RUSTEAK DOT. All rights reserved. Registered Trademark.
           </p>
 
-          <div className="flex items-center gap-6">
+          <div className="flex items-center gap-4">
+            <a
+              href="https://www.instagram.com/rusteakdot?utm_source=ig_web_button_share_sheet&vrfl=ZDNlZDc0"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="RUSTEAK DOT Instagram"
+              className="text-[#736e65] hover:text-[#ee2a7b] transition-colors duration-200"
+            >
+              <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+              </svg>
+            </a>
             <span className="font-heading tracking-[0.25em] uppercase text-white/50 text-[10px]">
               RUSTEAK <span className="text-gold">DOT</span>
             </span>

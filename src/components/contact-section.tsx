@@ -79,13 +79,15 @@ export function ContactSection() {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-wider text-ink-faint">
-                    Direct Client Concierge
+                    Direct Client Concierge / WhatsApp
                   </p>
                   <a
-                    href="tel:+912912600000"
+                    href="https://wa.me/919530182514"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="text-xs font-semibold text-ink hover:text-gold-dark transition-colors"
                   >
-                    +91 (0) 291 260 0000 / +91 98290 XXXXX
+                    +91 9530182514
                   </a>
                 </div>
               </div>

@@ -159,6 +159,12 @@
     height: 100svh;
   }
 
+  /* ── Clean Lining Numbers (No oldstyle jumping digits) ── */
+  .lining-digits {
+    font-family: var(--font-sans);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
   .sequence-canvas-shell {
     position: absolute;
     left: 50%;

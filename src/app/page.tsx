@@ -1,7 +1,8 @@
 import { SiteHeader } from "@/components/site-header";
 import { MainHomeScrollingExperience } from "@/components/sofa-sequence/sofa-sequence";
-import { BeforeAfterSection } from "@/components/before-after-section";
 import { ProductsEcommerceSection } from "@/components/products-ecommerce-section";
+import { ProductsServicesSection } from "@/components/products-services-section";
+import { BeforeAfterSection } from "@/components/before-after-section";
 import { Footer } from "@/components/footer";
 
 export default function Home() {
@@ -15,7 +16,10 @@ export default function Home() {
         {/* Second Section: E-Commerce Bespoke Products Catalog */}
         <ProductsEcommerceSection />
 
-        {/* Third Section: Before & After Furniture Transformation */}
+        {/* Third Section: Comprehensive Products & Services */}
+        <ProductsServicesSection />
+
+        {/* Fourth Section: Before & After Furniture Transformation */}
         <BeforeAfterSection />
       </main>
 

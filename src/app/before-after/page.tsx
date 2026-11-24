@@ -133,10 +133,12 @@ export default function BeforeAfterPage() {
                 <span>← Back to 360° Studio</span>
               </Link>
               <a
-                href="tel:+912912600000"
+                href="https://wa.me/919530182514?text=Hello%20Rusteak%20Dot,%20I%20would%20like%20to%20discuss%20a%20restoration%20or%20custom%20commission."
+                target="_blank"
+                rel="noopener noreferrer"
                 className="btn-explore text-xs"
               >
-                <span>Call Jodhpur Studio: +91 291 260 0000</span>
+                <span>WhatsApp Studio: +91 9530182514</span>
                 <span>→</span>
               </a>
             </div>

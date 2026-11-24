@@ -16,37 +16,37 @@ export function HeroSection() {
       <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_90%_70%_at_50%_45%,rgba(255,255,255,0.95)_0%,rgba(250,248,245,0.7)_60%,rgba(240,236,226,0.5)_100%)]" />
 
       {/* ── Top Header Row (Inside Hero as in Image) ── */}
-      <div className="relative z-20 w-full max-w-[1540px] mx-auto px-6 sm:px-10 lg:px-16 pt-3 md:pt-6">
+      <div className="relative z-20 w-full max-w-[1540px] mx-auto px-4 sm:px-8 lg:px-12 pt-2 sm:pt-4 md:pt-6">
         <div className="grid grid-cols-12 items-center">
           {/* Top Left: Slide Counter (01 / 04) with line indicator */}
-          <div className="col-span-12 md:col-span-3 flex items-center gap-3">
-            <span className="font-serif text-sm tracking-[0.2em] font-medium text-ink">
+          <div className="col-span-12 md:col-span-3 flex items-center gap-2 sm:gap-3">
+            <span className="font-serif text-xs sm:text-sm tracking-[0.2em] font-medium text-ink">
               01
             </span>
             <span className="text-xs font-light text-ink-faint">/</span>
-            <span className="font-serif text-xs tracking-[0.2em] text-ink-faint">
+            <span className="font-serif text-[11px] sm:text-xs tracking-[0.2em] text-ink-faint">
               04
             </span>
-            <div className="w-20 sm:w-24 h-[1.5px] bg-[#dcd7cb] overflow-hidden ml-1">
+            <div className="w-16 sm:w-24 h-[1.5px] bg-[#dcd7cb] overflow-hidden ml-1">
               <div className="h-full w-1/4 bg-gold" />
             </div>
           </div>
 
           {/* Top Center: Brand Title RUSTEAK DOT (Matching Image Exactly) */}
-          <div className="col-span-12 md:col-span-6 text-center my-4 md:my-0">
+          <div className="col-span-12 md:col-span-6 text-center my-3 md:my-0">
             {/* Flanked Eyebrow */}
-            <div className="flex items-center justify-center gap-3 text-[10px] md:text-[11px] tracking-[0.35em] text-ink-muted uppercase">
-              <span className="w-6 md:w-12 h-[1px] bg-gradient-to-r from-transparent to-gold" />
+            <div className="flex items-center justify-center gap-2 sm:gap-3 text-[9px] sm:text-[10px] md:text-[11px] tracking-[0.3em] sm:tracking-[0.35em] text-ink-muted uppercase">
+              <span className="w-4 sm:w-8 md:w-12 h-[1px] bg-gradient-to-r from-transparent to-gold" />
               <span className="font-medium text-gold-dark">
                 PREMIUM FURNITURE SOLUTIONS
               </span>
-              <span className="w-6 md:w-12 h-[1px] bg-gradient-to-l from-transparent to-gold" />
+              <span className="w-4 sm:w-8 md:w-12 h-[1px] bg-gradient-to-l from-transparent to-gold" />
             </div>
 
             {/* Majestic Title: RUSTEAK DOT */}
             <div className="mt-1 md:mt-2">
               <Link href="/" className="inline-block group">
-                <h1 className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-ink leading-none">
+                <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold tracking-tight text-ink leading-none">
                   <span className="text-[#141312]">RUSTEAK</span>{" "}
                   <span className="font-normal italic text-transparent bg-clip-text bg-gradient-to-r from-[#ba8c3b] via-[#dca954] to-[#9e6d24]">
                     DOT
@@ -56,7 +56,7 @@ export function HeroSection() {
             </div>
 
             {/* Sub-tagline: DESIGN • COMFORT • ELEGANCE */}
-            <div className="mt-2 md:mt-2.5 flex items-center justify-center gap-2 md:gap-3 text-[9px] md:text-[11px] uppercase tracking-[0.35em] text-ink-muted">
+            <div className="mt-1.5 sm:mt-2 md:mt-2.5 flex items-center justify-center gap-2 md:gap-3 text-[8px] sm:text-[9px] md:text-[11px] uppercase tracking-[0.3em] sm:tracking-[0.35em] text-ink-muted">
               <span>DESIGN</span>
               <span className="w-1 h-1 rounded-full bg-gold inline-block" />
               <span>COMFORT</span>
@@ -81,15 +81,15 @@ export function HeroSection() {
       </div>
 
       {/* ── Main Hero Content & BIG Sofa Centerpiece Stage ── */}
-      <div className="relative z-10 w-full max-w-[1540px] mx-auto px-6 sm:px-10 lg:px-16 my-auto py-2 md:py-6">
-        <div className="relative flex flex-col lg:flex-row items-center justify-between min-h-[480px] lg:min-h-[540px]">
+      <div className="relative z-10 w-full max-w-[1540px] mx-auto px-4 sm:px-8 lg:px-12 my-auto py-2 md:py-6">
+        <div className="relative flex flex-col lg:flex-row items-center justify-between min-h-[440px] sm:min-h-[480px] lg:min-h-[540px]">
           {/* ── BIG Sofa Presentation (Spans across stage) ── */}
           <div className="absolute inset-0 z-0 flex items-center justify-center lg:justify-end lg:pr-12 pointer-events-none">
             {/* Soft floor reflection shadow */}
             <div className="absolute bottom-[6%] w-[90%] max-w-5xl h-[20%] bg-gradient-to-t from-black/12 via-black/5 to-transparent rounded-[100%] blur-2xl" />
 
             {/* The Big Sofa Artwork */}
-            <div className="relative w-full max-w-5xl lg:max-w-[1100px] xl:max-w-[1200px] h-[360px] sm:h-[450px] lg:h-[520px] transition-transform duration-700 ease-out">
+            <div className="relative w-full max-w-5xl lg:max-w-[1100px] xl:max-w-[1200px] h-[300px] sm:h-[420px] lg:h-[520px] transition-transform duration-700 ease-out">
               <Image
                 src="/rusteak-hero.jpg"
                 alt="RUSTEAK DOT Flagship Custom 4-Seater Sofa"
@@ -102,14 +102,14 @@ export function HeroSection() {
           </div>
 
           {/* ── Left Column: Clean Text with Frosted White Blur (Hides any image seam) ── */}
-          <div className="relative z-20 w-full lg:w-[480px] text-left pt-6 lg:pt-0">
+          <div className="relative z-20 w-full lg:w-[480px] text-left pt-4 sm:pt-6 lg:pt-0">
             {/* The blurred protective container so text is 100% crisp without image clash */}
-            <div className="backdrop-blur-md bg-[#faf8f5]/85 lg:bg-[#faf8f5]/75 p-6 sm:p-8 rounded-2xl border border-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.03)]">
-              <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-gold-dark block mb-2">
+            <div className="backdrop-blur-md bg-[#faf8f5]/85 lg:bg-[#faf8f5]/75 p-4 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-white/60 shadow-[0_15px_35px_rgba(0,0,0,0.03)]">
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.3em] font-semibold text-gold-dark block mb-1.5 sm:mb-2">
                 Series 01 — Flagship
               </span>
 
-              <h2 className="font-heading text-3xl sm:text-4xl md:text-[2.65rem] leading-[1.08] font-semibold text-[#181714] tracking-[-0.015em]">
+              <h2 className="font-heading text-2xl sm:text-3xl md:text-[2.65rem] leading-[1.1] sm:leading-[1.08] font-semibold text-[#181714] tracking-[-0.015em]">
                 Custom Furniture
                 <br />
                 <span className="font-normal italic text-gold-dark font-cormorant">
@@ -117,21 +117,21 @@ export function HeroSection() {
                 </span>
               </h2>
 
-              <p className="mt-4 text-sm sm:text-base leading-relaxed text-ink-muted">
+              <p className="mt-3 sm:mt-4 text-xs sm:text-sm md:text-base leading-relaxed text-ink-muted">
                 Transform your space with timeless designs and premium
                 craftsmanship.
               </p>
 
               {/* The Image Button: Caramel Gold Pill */}
-              <div className="mt-7 flex flex-wrap items-center gap-4">
-                <Link href="#collection" className="btn-explore">
+              <div className="mt-5 sm:mt-7 flex flex-wrap items-center gap-3 sm:gap-4">
+                <Link href="#collection" className="btn-explore !py-2.5 !px-5 text-xs sm:text-sm">
                   <span>Explore Collection</span>
                   <span className="text-base">→</span>
                 </Link>
 
                 <a
                   href="#experience"
-                  className="text-xs font-semibold uppercase tracking-wider text-gold-dark hover:text-ink transition-colors flex items-center gap-1.5"
+                  className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-gold-dark hover:text-ink transition-colors flex items-center gap-1.5"
                 >
                   <span>Scroll 360°</span>
                   <span className="text-sm">↓</span>

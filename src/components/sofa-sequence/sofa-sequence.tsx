@@ -51,7 +51,7 @@ const chapters: Chapter[] = [
     description:
       "Hand-chiseled lost-wax brass feet and kiln-dried solid teak joinery crafted by hereditary Jodhpur master woodworkers.",
     buttonText: "Book Private Viewing",
-    buttonHref: "tel:+912912600000",
+    buttonHref: "https://wa.me/919530182514?text=Hello%20Rusteak%20Dot,%20I%20would%20like%20to%20book%20a%20private%20viewing%20at%20Gang%20Tower%20Showroom.",
     tag: "Gang Tower Showroom",
   },
 ];

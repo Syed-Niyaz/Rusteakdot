@@ -5,7 +5,19 @@ import { useState, useEffect } from "react";
 
 const navLinks = [
   { label: "E-Catalog", href: "#products" },
+  { label: "Products & Services", href: "#services" },
   { label: "Before & After", href: "#before-after" },
+  { label: "About Us", href: "/about" },
+  { label: "Showroom", href: "#enquire" },
+];
+
+const mobileNavLinks = [
+  { label: "E-Catalog", href: "/catalog" },
+  { label: "Products & Services", href: "/#services" },
+  { label: "Before & After", href: "/before-after" },
+  { label: "About Us", href: "/about" },
+  { label: "Vision", href: "/vision" },
+  { label: "Clients & Enquiries", href: "/clients" },
   { label: "Showroom", href: "#enquire" },
 ];
 
@@ -33,6 +45,8 @@ export function SiteHeader() {
       const el = document.querySelector(href);
       if (el) {
         el.scrollIntoView({ behavior: "smooth" });
+      } else {
+        window.location.href = `/${href}`;
       }
     }
   };
@@ -86,7 +100,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-2 sm:gap-3">
             {/* Direct WhatsApp Redirect Button - Slim & Clean */}
             <a
-              href="https://wa.me/912912600000?text=Hello%20RUSTEAK%20DOT%20Studio,%20I%20would%20like%20to%20enquire%20about%20bespoke%20furniture."
+              href="https://wa.me/919530182514?text=Hello%20RUSTEAK%20DOT%20Studio,%20I%20would%20like%20to%20enquire%20about%20bespoke%20furniture."
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Direct WhatsApp Consultation"
@@ -137,14 +151,14 @@ export function SiteHeader() {
         {/* Mobile Navigation Drawer */}
         {mobileOpen && (
           <div className="border-b border-hairline bg-[#faf9f6]/98 px-6 py-8 backdrop-blur-xl md:hidden shadow-xl animate-in fade-in slide-in-from-top-2 duration-200">
-            <nav className="flex flex-col gap-5 text-center">
-              {navLinks.map((link) =>
+            <nav className="flex flex-col gap-4 text-center">
+              {mobileNavLinks.map((link) =>
                 link.href.startsWith("/") ? (
                   <Link
                     key={link.label}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className="text-xs uppercase tracking-[0.25em] text-ink py-1.5 transition-colors hover:text-gold-dark font-medium"
+                    className="text-xs uppercase tracking-[0.22em] text-ink py-1.5 transition-colors hover:text-gold-dark font-medium"
                   >
                     {link.label}
                   </Link>
@@ -152,7 +166,7 @@ export function SiteHeader() {
                   <button
                     key={link.label}
                     onClick={() => handleNavClick(link.href)}
-                    className="text-xs uppercase tracking-[0.25em] text-ink py-1.5 transition-colors hover:text-gold-dark cursor-pointer font-medium"
+                    className="text-xs uppercase tracking-[0.22em] text-ink py-1.5 transition-colors hover:text-gold-dark cursor-pointer font-medium"
                   >
                     {link.label}
                   </button>
@@ -163,7 +177,7 @@ export function SiteHeader() {
                   Gang Tower, Jodhpur, Rajasthan
                 </span>
                 <a
-                  href="https://wa.me/912912600000?text=Hello%20RUSTEAK%20DOT%20Studio,%20I%20would%20like%20to%20enquire%20about%20bespoke%20furniture."
+                  href="https://wa.me/919530182514?text=Hello%20RUSTEAK%20DOT%20Studio,%20I%20would%20like%20to%20enquire%20about%20bespoke%20furniture."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full py-2.5 px-4 rounded-full bg-[#25D366] text-white flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-wider shadow-sm"
@@ -295,10 +309,10 @@ export function SiteHeader() {
 
                   <div className="pt-2 flex items-center justify-between gap-4">
                     <a
-                      href="tel:+912912600000"
+                      href="tel:+919530182514"
                       className="text-xs font-semibold text-gold-dark hover:underline"
                     >
-                      Call: +91 291 260 0000
+                      Call: +91 9530182514
                     </a>
                     <button type="submit" className="btn-explore !py-2.5 !px-6 text-xs">
                       Submit Request
