@@ -1,158 +1,273 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
-import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
-  title: "Clients & Enquiries — Who We Work With | RUSTEAK DOT",
+  title: "Clients & Architectural Collaborations — RUSTEAK DOT Jodhpur",
   description:
-    "RUSTEAK DOT works with individual homeowners, architects, interior designers, corporate offices, hotels, commercial establishments, and bulk buyers looking for custom bespoke furniture from Jodhpur.",
+    "RUSTEAK DOT partners with architects, interior designers, luxury hospitality brands, corporate HQs, and private homeowners across India for bespoke precision-crafted furniture.",
 };
 
-const clientele = [
+interface ClientSector {
+  id: string;
+  category: string;
+  title: string;
+  tagline: string;
+  scope: string[];
+  engagement: string;
+  whatsappMessage: string;
+}
+
+const clientSectors: ClientSector[] = [
   {
-    icon: "🏡",
-    title: "Individual Homeowners",
-    desc: "People looking to furnish, upgrade or customize their living spaces.",
+    id: "private-residences",
+    category: "Private Residential",
+    title: "Discerning Homeowners & Estates",
+    tagline: "Custom Living Suites, Platform Beds & Heirloom Restorations",
+    scope: [
+      "Custom curved sectionals & tuxedo sofas built to room floor plans",
+      "Solid Burma teak dining tables (6 to 14 seaters) with brass inlays",
+      "Full bedroom sanctuary platform beds with integrated floating nightstands",
+      "Restoration of family vintage heirlooms into contemporary focal pieces",
+    ],
+    engagement: "Direct atelier consultation, material swatches delivered home, white-glove setup.",
+    whatsappMessage: "Hello RUSTEAK DOT, I am an individual homeowner looking to commission custom furniture for my residence.",
   },
   {
-    icon: "📐",
+    id: "architects-designers",
+    category: "Design Trade",
     title: "Architects & Interior Designers",
-    desc: "Design professionals looking for furniture manufacturing support for residential and commercial projects.",
+    tagline: "Custom Manufacturing from CAD Blueprints & 3D Renders",
+    scope: [
+      "Precision manufacturing strictly adhering to architect specification sheets",
+      "Custom wood staining (honey, walnut, smoked charcoal) and brass finishes",
+      "Turnkey millwork, bespoke credenzas, floating consoles and fluted panels",
+      "Dedicated Jodhpur workshop project manager with live photo QC updates",
+    ],
+    engagement: "Trade pricing, CAD blueprint engineering, expedited sample dispatch.",
+    whatsappMessage: "Hello RUSTEAK DOT, I am an architect / interior designer looking to partner on upcoming client projects.",
   },
   {
-    icon: "🏢",
-    title: "Corporate Offices & Businesses",
-    desc: "Organizations seeking functional and customized furniture for offices and workspaces.",
+    id: "corporate-workspaces",
+    category: "Commercial & HQ",
+    title: "Corporate Offices & Innovation Hubs",
+    tagline: "Executive Director Desks, Boardrooms & Acoustic Lounges",
+    scope: [
+      "10 to 24-seater solid hardwood conference tables with concealed wire raceways",
+      "Director workstations with wireless charging wells and lockable drawers",
+      "Modular breakout booths and acoustic bouclé lounge seating",
+      "Reception statement desks featuring hand-chiseled stone and fluted teak",
+    ],
+    engagement: "Turnkey office installations, heavy commercial duty hardware, warranty cover.",
+    whatsappMessage: "Hello RUSTEAK DOT, I would like to enquire about bespoke commercial furniture for our corporate office.",
   },
   {
-    icon: "🏨",
-    title: "Hotels & Hospitality",
-    desc: "Hospitality businesses requiring furniture for rooms, lobbies, restaurants and other spaces.",
+    id: "hospitality-resorts",
+    category: "Hospitality & Boutique",
+    title: "Hotels, Heritage Haveli & Resorts",
+    tagline: "High-Traffic Luxury Suites, Lobby Lounges & Banquet Halls",
+    scope: [
+      "Heavy-duty solid Sheesham and teak guest room suites (bed, desk, wardrobe)",
+      "Lobby lounge conversation clusters upholstered in water-repellent performance fabrics",
+      "Bespoke bar counters, back-bar vitrines, and restaurant dining tables",
+      "Handcrafted cabana outdoor teak loungers with weather-resistant finishes",
+    ],
+    engagement: "Multi-room volume production schedules, phased dispatches, on-site installation teams.",
+    whatsappMessage: "Hello RUSTEAK DOT, I represent a hospitality brand / resort seeking bespoke furniture manufacturing.",
   },
   {
-    icon: "🏪",
-    title: "Commercial Establishments",
-    desc: "Retail stores, restaurants, studios, institutions and other businesses with specialized furniture requirements.",
+    id: "commercial-retail",
+    category: "Retail & Gastronomy",
+    title: "Boutiques, Cafés & Showrooms",
+    tagline: "Architectural Display Fixtures & Signature Customer Seating",
+    scope: [
+      "Curated retail display plinths, brass clothing racks, and cashier counters",
+      "Bespoke cafe banquettes, bistro dining tables, and bar stools",
+      "Acoustic fluted partition screens and modular merchandising shelving",
+      "High-durability commercial scratch-resistant polyurethane and micro-wax seals",
+    ],
+    engagement: "Custom architectural branding integration, rapid turnkey delivery.",
+    whatsappMessage: "Hello RUSTEAK DOT, I would like to enquire about custom furniture for our retail store / cafe space.",
   },
   {
-    icon: "📦",
-    title: "Bulk & Institutional Buyers",
-    desc: "Clients requiring furniture in larger quantities for projects, facilities or multiple locations.",
+    id: "turnkey-institutions",
+    category: "Institutional & Bulk",
+    title: "Institutions & Real Estate Developers",
+    tagline: "Model Apartment Furnishing & Turnkey Property Fit-Outs",
+    scope: [
+      "Complete model home furniture packages for premium residential developments",
+      "Library book stacks, executive reading tables, and club room furniture",
+      "Standardized multi-unit production with strict batch-to-batch color consistency",
+      "End-to-end logistics with transit insurance and room-placement guarantee",
+    ],
+    engagement: "Volume contract pricing, formal quotation schedules, milestone billing.",
+    whatsappMessage: "Hello RUSTEAK DOT, I would like to discuss a bulk institutional / real estate project requirement.",
   },
 ];
 
 export default function ClientsPage() {
   return (
-    <>
-      <SiteHeader />
+    <main className="min-h-screen bg-[#faf9f6] text-ink pb-24">
+      {/* ── Top Breadcrumb & Return to 360° Studio Bar ── */}
+      <div className="border-b border-hairline/80 bg-white/90 backdrop-blur-xs sticky top-0 z-40">
+        <div className="mx-auto max-w-[1540px] px-4 sm:px-8 lg:px-12 py-2.5 sm:py-3 flex items-center justify-between gap-2 text-xs">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 sm:gap-2 text-ink-muted hover:text-gold-dark font-medium transition-colors group shrink-0"
+          >
+            <span className="text-sm transition-transform group-hover:-translate-x-1">←</span>
+            <span className="uppercase tracking-widest text-[10px] sm:text-[11px] font-semibold">
+              Back to 360° Studio
+            </span>
+          </Link>
 
-      <main className="min-h-screen bg-[#faf9f6] text-ink pt-28 sm:pt-36 pb-24">
-        {/* Breadcrumb */}
-        <div className="mx-auto max-w-[1540px] px-5 sm:px-8 lg:px-14 mb-8 sm:mb-12">
-          <div className="flex items-center justify-between border-b border-hairline/80 pb-4 text-[11px] uppercase tracking-[0.25em] text-ink-muted">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors font-medium"
-            >
-              <span>←</span>
-              <span>Back to 360° Studio</span>
+          <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] uppercase tracking-wider text-ink-faint">
+            <Link href="/" className="hover:text-gold-dark hidden sm:inline">
+              Home
             </Link>
-            <div className="flex items-center gap-2">
-              <Link href="/" className="hover:text-gold-dark transition-colors">
-                Home
-              </Link>
-              <span>/</span>
-              <span className="text-gold-dark font-semibold">Clients & Enquiries</span>
-            </div>
+            <span className="hidden sm:inline">/</span>
+            <span className="text-gold-dark font-semibold">Client Partnerships</span>
           </div>
         </div>
+      </div>
 
-        <div className="mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-14">
-          {/* Page Header */}
-          <div className="text-center max-w-3xl mx-auto">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/30 text-gold-dark text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] uppercase">
-              <span>WHO WE WORK WITH</span>
-              <span className="w-1.5 h-1.5 rounded-full bg-gold-dark" />
-              <span>CLIENTS &amp; ENQUIRIES</span>
+      <div className="mx-auto max-w-[1540px] px-5 sm:px-8 lg:px-12 pt-8 sm:pt-14">
+        {/* ── Unique Editorial Header ── */}
+        <div className="pb-10 border-b border-hairline flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+          <div className="max-w-2xl">
+            <div className="inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.3em] font-semibold text-gold-dark mb-3">
+              <span className="w-2 h-2 rounded-full bg-gold-dark" />
+              <span>COMMISSIONS &amp; PARTNERSHIPS</span>
             </div>
 
-            <h1 className="mt-5 font-heading text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.15]">
-              Our Clientele
+            <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-ink leading-[1.08]">
+              Who We Build For.
+              <br />
+              <span className="font-normal italic font-serif text-gold-dark">
+                From One Room to Turnkey Projects.
+              </span>
             </h1>
 
-            <p className="mt-4 text-sm sm:text-base text-ink-muted leading-relaxed max-w-2xl mx-auto">
-              RUSTEAK DOT works with individuals and businesses looking for furniture that meets their specific requirements. From a single bespoke table to complete commercial installations — we make it.
+            <p className="mt-4 text-xs sm:text-sm lg:text-base text-ink-muted leading-relaxed font-serif italic max-w-xl">
+              Whether you need a single custom-dimensioned teak dining table for your residence or 50 executive suites for a luxury hotel &mdash; our Jodhpur atelier executes every commission with heirloom precision.
             </p>
           </div>
 
-          {/* Clientele Cards Grid */}
-          <div className="mt-12 lg:mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {clientele.map((item, idx) => (
-              <div
-                key={item.title}
-                className="bg-white p-6 sm:p-8 border border-hairline rounded-sm hover:border-gold/60 hover:shadow-md transition-all duration-300 flex flex-col gap-3"
-              >
-                <div className="flex items-center justify-between">
-                  <span className="text-2xl">{item.icon}</span>
-                  <span className="text-[10px] uppercase tracking-[0.25em] font-semibold text-gold-dark border border-gold/30 px-2 py-0.5 rounded-full bg-gold/5">
-                    0{idx + 1}
-                  </span>
-                </div>
-                <h2 className="font-heading text-lg sm:text-xl font-bold text-ink leading-snug">
-                  {item.title}
-                </h2>
-                <p className="text-xs sm:text-sm text-ink-muted leading-relaxed">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          {/* Enquiry CTA Banner */}
-          <div className="mt-12 bg-gradient-to-r from-[#181714] via-[#24221d] to-[#181714] text-white p-8 sm:p-12 rounded-sm border border-gold/30 shadow-md">
-            <div className="max-w-3xl mx-auto text-center space-y-5">
-              <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-gold block">
-                Start Your Enquiry
-              </span>
-              <h2 className="font-heading text-2xl sm:text-3xl font-bold text-white leading-snug">
-                Have a Furniture Requirement?
-                <br />
-                <span className="font-normal italic font-serif text-gold-light">
-                  Let&rsquo;s Discuss Your Exact Needs.
-                </span>
-              </h2>
-              <p className="text-xs sm:text-sm text-white/70 leading-relaxed max-w-xl mx-auto">
-                Share your dimensions, reference images, material preferences, or project brief on WhatsApp and our team will get back to you within 24 hours.
-              </p>
-
-              <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-3">
-                <a
-                  href="https://wa.me/919530182514?text=Hello%20RUSTEAK%20DOT,%20I%20would%20like%20to%20enquire%20about%20a%20furniture%20requirement%20for%20my%20project."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto h-12 px-8 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center gap-2 text-xs uppercase tracking-wider font-semibold transition-all shadow-sm"
-                >
-                  <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
-                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z" />
-                  </svg>
-                  <span>WhatsApp Your Requirement</span>
-                </a>
-
-                <Link
-                  href="/catalog"
-                  className="w-full sm:w-auto h-12 px-7 rounded-full border border-white/30 hover:border-gold text-white hover:text-gold flex items-center justify-center text-xs uppercase tracking-wider font-semibold transition-all bg-white/5"
-                >
-                  <span>Browse Bespoke Catalog</span>
-                  <span className="ml-2">→</span>
-                </Link>
-              </div>
+          {/* Quick Metrics Badges */}
+          <div className="grid grid-cols-3 gap-3 sm:gap-4 shrink-0 max-w-lg w-full">
+            <div className="bg-white p-4 border border-hairline rounded-xs shadow-2xs text-center">
+              <span className="text-gold-dark font-numeric text-xl sm:text-2xl font-bold block">10+ Yrs</span>
+              <span className="text-[10px] text-ink-muted uppercase tracking-wider block mt-0.5">Heritage Experience</span>
+            </div>
+            <div className="bg-white p-4 border border-hairline rounded-xs shadow-2xs text-center">
+              <span className="text-gold-dark font-numeric text-xl sm:text-2xl font-bold block">100%</span>
+              <span className="text-[10px] text-ink-muted uppercase tracking-wider block mt-0.5">Custom Dimensions</span>
+            </div>
+            <div className="bg-white p-4 border border-hairline rounded-xs shadow-2xs text-center">
+              <span className="text-gold-dark font-heading text-xl sm:text-2xl font-bold block">Pan-India</span>
+              <span className="text-[10px] text-ink-muted uppercase tracking-wider block mt-0.5">White-Glove Setup</span>
             </div>
           </div>
         </div>
-      </main>
 
-      <Footer />
-    </>
+        {/* ── Client Sectors Grid ── */}
+        <div className="mt-12 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {clientSectors.map((sector, index) => (
+            <div
+              key={sector.id}
+              className="bg-white border border-hairline rounded-sm p-6 sm:p-8 flex flex-col justify-between shadow-2xs hover:border-gold/60 hover:shadow-xl transition-all duration-300 group"
+            >
+              <div>
+                {/* Sector Header */}
+                <div className="flex items-center justify-between pb-4 border-b border-hairline/80">
+                  <span className="text-[9px] uppercase tracking-[0.25em] font-semibold text-gold-dark bg-[#faf8f5] px-2.5 py-1 rounded-full border border-gold/30">
+                    {sector.category}
+                  </span>
+                  <span className="text-xs font-numeric font-bold text-ink-faint">
+                    0{index + 1}
+                  </span>
+                </div>
+
+                <h2 className="mt-4 font-heading text-xl sm:text-2xl font-bold text-ink leading-snug group-hover:text-gold-dark transition-colors">
+                  {sector.title}
+                </h2>
+                <p className="mt-1 text-xs text-gold-dark font-serif italic font-medium">
+                  {sector.tagline}
+                </p>
+
+                {/* Scope items */}
+                <div className="mt-5 space-y-2 pt-4 border-t border-hairline/70">
+                  <p className="text-[10px] uppercase tracking-[0.2em] font-semibold text-ink-faint">
+                    Scope of Commissions
+                  </p>
+                  <ul className="space-y-2">
+                    {sector.scope.map((item, i) => (
+                      <li key={i} className="flex items-start gap-2 text-xs text-ink-muted">
+                        <span className="text-gold-dark font-bold mt-0.5 shrink-0">&bull;</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Engagement Standard */}
+                <div className="mt-5 p-3 bg-[#faf8f5] border border-hairline/80 rounded-xs text-[11px] text-ink-muted">
+                  <span className="text-[9px] uppercase tracking-wider text-ink-faint block font-semibold">
+                    Collaboration Terms
+                  </span>
+                  <p className="mt-0.5 leading-relaxed">{sector.engagement}</p>
+                </div>
+              </div>
+
+              {/* Action */}
+              <div className="mt-6 pt-4 border-t border-hairline/80">
+                <a
+                  href={`https://wa.me/919530182514?text=${encodeURIComponent(sector.whatsappMessage)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full h-10 px-4 rounded-full bg-[#181714] hover:bg-gold-dark text-white flex items-center justify-between text-xs uppercase tracking-wider font-semibold transition-all shadow-sm"
+                >
+                  <span>Enquire For This Sector</span>
+                  <span>&rarr;</span>
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* ── Direct Workshop Blueprint Submission Suite ── */}
+        <div className="mt-14 bg-gradient-to-br from-[#181714] via-[#24221d] to-[#181714] text-white p-8 sm:p-12 lg:p-14 rounded-sm border border-gold/30 shadow-xl">
+          <div className="max-w-4xl mx-auto flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div className="space-y-3">
+              <span className="text-[10px] uppercase tracking-[0.3em] font-semibold text-gold block">
+                DIRECT JODHPUR WORKSHOP COLLABORATION
+              </span>
+              <h2 className="font-heading text-2xl sm:text-4xl font-bold text-white leading-tight">
+                Have Architectural Drawings or a Project BOQ?
+              </h2>
+              <p className="text-xs sm:text-sm text-white/75 leading-relaxed font-serif italic max-w-xl">
+                Send us your floor plans, 3D renderings, material finish targets, or quantity schedules. Our production engineers will provide a formal itemized quote within 24 hours.
+              </p>
+            </div>
+
+            <div className="shrink-0 flex flex-col sm:flex-row gap-3">
+              <a
+                href="https://wa.me/919530182514?text=Hello%20RUSTEAK%20DOT,%20I%20have%20an%20architectural%20drawing%20/%20BOQ%20I%20would%20like%20to%20share%20for%20quotation."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="h-12 px-7 rounded-full bg-[#25D366] hover:bg-[#20bd5a] text-white flex items-center justify-center gap-2 text-xs uppercase tracking-wider font-semibold transition-all shadow-md"
+              >
+                <span>WhatsApp Drawings &rarr;</span>
+              </a>
+              <Link
+                href="/catalog"
+                className="h-12 px-7 rounded-full border border-white/30 hover:border-gold text-white hover:text-gold flex items-center justify-center text-xs uppercase tracking-wider font-semibold transition-all bg-white/5"
+              >
+                <span>Browse E-Catalog</span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
   );
 }

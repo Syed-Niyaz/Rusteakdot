@@ -69,17 +69,26 @@ export function BeforeAfterSlider({ item }: { item: BeforeAfterItem }) {
             <span className="w-1.5 h-1.5 rounded-full bg-gold" />
             <span>{item.category}</span>
             <span className="text-ink-faint">•</span>
-            <span>{item.year}</span>
+            <span className="font-numeric font-semibold tracking-wider">{item.year}</span>
           </div>
-          <h3 className="font-heading text-xl sm:text-2xl font-bold text-ink mt-1">
-            {item.title}
+          <h3 className="font-heading text-xl sm:text-2xl font-bold text-ink mt-1 flex items-baseline gap-2">
+            {item.title.match(/^(\d+\.?)\s*(.*)/) ? (
+              <>
+                <span className="font-numeric font-bold text-gold-dark text-lg sm:text-xl tracking-tight shrink-0">
+                  {item.title.match(/^(\d+\.?)\s*(.*)/)![1]}
+                </span>
+                <span>{item.title.match(/^(\d+\.?)\s*(.*)/)![2]}</span>
+              </>
+            ) : (
+              <span>{item.title}</span>
+            )}
           </h3>
         </div>
 
         <div className="flex items-center gap-3">
           <span className="inline-flex items-center gap-2 bg-[#faf9f6] border border-hairline px-3.5 py-1.5 rounded-full text-[11px] font-medium text-ink-muted">
             <span className="w-1.5 h-1.5 rounded-full bg-gold" />
-            <span>{item.hours}</span>
+            <span className="font-numeric font-semibold">{item.hours}</span>
           </span>
           <span className="text-xs uppercase tracking-widest text-ink-faint hidden sm:inline">
             Drag Slider to Compare ↔

@@ -20,11 +20,11 @@ export function HeroSection() {
         <div className="grid grid-cols-12 items-center">
           {/* Top Left: Slide Counter (01 / 04) with line indicator */}
           <div className="col-span-12 md:col-span-3 flex items-center gap-2 sm:gap-3">
-            <span className="font-serif text-xs sm:text-sm tracking-[0.2em] font-medium text-ink">
+            <span className="font-numeric text-xs sm:text-sm tracking-[0.2em] font-semibold text-ink">
               01
             </span>
             <span className="text-xs font-light text-ink-faint">/</span>
-            <span className="font-serif text-[11px] sm:text-xs tracking-[0.2em] text-ink-faint">
+            <span className="font-numeric text-[11px] sm:text-xs tracking-[0.2em] text-ink-faint">
               04
             </span>
             <div className="w-16 sm:w-24 h-[1.5px] bg-[#dcd7cb] overflow-hidden ml-1">

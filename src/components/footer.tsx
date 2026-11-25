@@ -61,17 +61,11 @@ export function Footer() {
               <Link href="/vision" className="hover:text-gold transition-colors">
                 Vision
               </Link>
-              <Link href="/catalog" className="hover:text-gold transition-colors">
-                Bespoke Catalog
-              </Link>
-              <Link href="/#services" className="hover:text-gold transition-colors">
-                Services &amp; Custom
+              <Link href="/services" className="hover:text-gold transition-colors">
+                Services
               </Link>
               <Link href="/before-after" className="hover:text-gold transition-colors">
                 Before &amp; After
-              </Link>
-              <Link href="/clients" className="hover:text-gold transition-colors">
-                Clients &amp; Enquiries
               </Link>
             </nav>
           </div>

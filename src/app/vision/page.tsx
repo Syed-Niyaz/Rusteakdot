@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
-import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Purpose, Vision, Mission & Values | RUSTEAK DOT",
@@ -52,29 +50,31 @@ const missionCommitments = [
 
 export default function VisionPage() {
   return (
-    <>
-      <SiteHeader />
+    <main className="min-h-screen bg-[#faf9f6] text-ink pb-20">
+      {/* ── Top Breadcrumb & Return to 360° Studio Bar ── */}
+      <div className="border-b border-hairline/80 bg-white/90 backdrop-blur-xs sticky top-0 z-40">
+        <div className="mx-auto max-w-[1540px] px-4 sm:px-8 lg:px-12 py-2.5 sm:py-3 flex items-center justify-between gap-2 text-xs">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 sm:gap-2 text-ink-muted hover:text-gold-dark font-medium transition-colors group shrink-0"
+          >
+            <span className="text-sm transition-transform group-hover:-translate-x-1">←</span>
+            <span className="uppercase tracking-widest text-[10px] sm:text-[11px] font-semibold">
+              Back to 360° Studio
+            </span>
+          </Link>
 
-      <main className="min-h-screen bg-[#faf9f6] text-ink pt-28 sm:pt-36 pb-24">
-        {/* Breadcrumb */}
-        <div className="mx-auto max-w-[1540px] px-5 sm:px-8 lg:px-14 mb-8 sm:mb-12">
-          <div className="flex items-center justify-between border-b border-hairline/80 pb-4 text-[11px] uppercase tracking-[0.25em] text-ink-muted">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors font-medium"
-            >
-              <span>←</span>
-              <span>Back to 360° Studio</span>
+          <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] uppercase tracking-wider text-ink-faint">
+            <Link href="/" className="hover:text-gold-dark hidden sm:inline">
+              Home
             </Link>
-            <div className="flex items-center gap-2">
-              <Link href="/" className="hover:text-gold-dark transition-colors">Home</Link>
-              <span>/</span>
-              <span className="text-gold-dark font-semibold">Vision</span>
-            </div>
+            <span className="hidden sm:inline">/</span>
+            <span className="text-gold-dark font-semibold">Vision</span>
           </div>
         </div>
+      </div>
 
-        <div className="mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-14 space-y-14">
+      <div className="mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-14 pt-8 sm:pt-12 space-y-14">
 
           {/* Page Header */}
           <div className="text-center max-w-3xl mx-auto">
@@ -150,7 +150,7 @@ export default function VisionPage() {
                   className="bg-white p-6 sm:p-7 border border-hairline rounded-sm hover:border-gold/60 hover:shadow-md transition-all duration-300"
                 >
                   <div className="flex items-center justify-between mb-3">
-                    <span className="font-serif italic text-2xl text-gold-dark font-bold">{v.num}</span>
+                    <span className="font-numeric text-2xl text-gold-dark font-bold tracking-tight">{v.num}.</span>
                     <span className="w-8 h-[1px] bg-gold/40" />
                   </div>
                   <h3 className="font-heading text-base sm:text-lg font-bold text-ink leading-snug">
@@ -202,9 +202,6 @@ export default function VisionPage() {
           </div>
 
         </div>
-      </main>
-
-      <Footer />
-    </>
+    </main>
   );
 }

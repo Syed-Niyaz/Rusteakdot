@@ -4,21 +4,21 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 
 const navLinks = [
-  { label: "E-Catalog", href: "#products" },
-  { label: "Products & Services", href: "#services" },
-  { label: "Before & After", href: "#before-after" },
+  { label: "E-Catalog", href: "/catalog" },
+  { label: "Services", href: "/services" },
+  { label: "Blog", href: "/blog" },
   { label: "About Us", href: "/about" },
-  { label: "Showroom", href: "#enquire" },
+  { label: "Clients & Enquiries", href: "/clients" },
 ];
 
 const mobileNavLinks = [
   { label: "E-Catalog", href: "/catalog" },
-  { label: "Products & Services", href: "/#services" },
+  { label: "Services", href: "/services" },
+  { label: "Blog", href: "/blog" },
   { label: "Before & After", href: "/before-after" },
   { label: "About Us", href: "/about" },
   { label: "Vision", href: "/vision" },
   { label: "Clients & Enquiries", href: "/clients" },
-  { label: "Showroom", href: "#enquire" },
 ];
 
 export function SiteHeader() {

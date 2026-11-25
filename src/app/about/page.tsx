@@ -1,7 +1,5 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { SiteHeader } from "@/components/site-header";
-import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "About Us — Furniture That Fits. Craftsmanship That Matters. | RUSTEAK DOT",
@@ -11,30 +9,31 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <>
-      <SiteHeader />
+    <main className="min-h-screen bg-[#faf9f6] text-ink pb-20">
+      {/* ── Top Breadcrumb & Return to 360° Studio Bar ── */}
+      <div className="border-b border-hairline/80 bg-white/90 backdrop-blur-xs sticky top-0 z-40">
+        <div className="mx-auto max-w-[1540px] px-4 sm:px-8 lg:px-12 py-2.5 sm:py-3 flex items-center justify-between gap-2 text-xs">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-1.5 sm:gap-2 text-ink-muted hover:text-gold-dark font-medium transition-colors group shrink-0"
+          >
+            <span className="text-sm transition-transform group-hover:-translate-x-1">←</span>
+            <span className="uppercase tracking-widest text-[10px] sm:text-[11px] font-semibold">
+              Back to 360° Studio
+            </span>
+          </Link>
 
-      <main className="min-h-screen bg-[#faf9f6] text-ink pt-28 sm:pt-36 pb-24">
-        {/* Breadcrumb Navigation & Top Action */}
-        <div className="mx-auto max-w-[1540px] px-5 sm:px-8 lg:px-14 mb-8 sm:mb-12">
-          <div className="flex items-center justify-between border-b border-hairline/80 pb-4 text-[11px] uppercase tracking-[0.25em] text-ink-muted">
-            <Link
-              href="/"
-              className="inline-flex items-center gap-1.5 hover:text-gold-dark transition-colors font-medium"
-            >
-              <span>←</span>
-              <span>Back to 360° Studio</span>
+          <div className="flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-[11px] uppercase tracking-wider text-ink-faint">
+            <Link href="/" className="hover:text-gold-dark hidden sm:inline">
+              Home
             </Link>
-            <div className="flex items-center gap-2">
-              <Link href="/" className="hover:text-gold-dark transition-colors">
-                Home
-              </Link>
-              <span>/</span>
-              <span className="text-gold-dark font-semibold">About Us</span>
-            </div>
+            <span className="hidden sm:inline">/</span>
+            <span className="text-gold-dark font-semibold">About Us</span>
           </div>
         </div>
+      </div>
 
+      <div className="pt-8 sm:pt-12">
         {/* Hero Header Section */}
         <div className="mx-auto max-w-[1480px] px-5 sm:px-8 lg:px-14">
           <div className="text-center max-w-4xl mx-auto">
@@ -265,9 +264,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </main>
-
-      <Footer />
-    </>
+      </div>
+    </main>
   );
 }

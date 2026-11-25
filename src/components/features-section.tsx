@@ -81,7 +81,7 @@ export function FeaturesSection() {
             >
               <div>
                 <div className="flex items-center justify-between pb-4 border-b border-hairline/60">
-                  <span className="font-serif text-sm tracking-widest text-gold-dark font-medium">
+                  <span className="font-numeric text-sm tracking-widest text-gold-dark font-bold">
                     {feat.number}
                   </span>
                   <span className="text-[10px] uppercase tracking-[0.2em] text-ink-faint">
