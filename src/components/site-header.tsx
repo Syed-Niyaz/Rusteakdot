@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 const navLinks = [
@@ -61,13 +62,16 @@ export function SiteHeader() {
         }`}
       >
         <div className="mx-auto flex max-w-[1540px] items-center justify-between px-5 sm:px-8 lg:px-12">
-          {/* Brand Logo (Left) */}
-          <Link href="/" className="group flex items-center gap-2">
-            <span className="h-1.5 w-1.5 rounded-full bg-gold transition-transform duration-500 group-hover:scale-125 shadow-[0_0_8px_rgba(197,158,81,0.6)]" />
-            <span className="font-heading text-base md:text-lg font-bold tracking-[0.24em] text-ink">
-              RUSTEAK
-              <span className="font-normal italic text-gold-dark font-serif"> DOT</span>
-            </span>
+          {/* Brand Logo (Left) — compact header slot, visually scaled logo only */}
+          <Link href="/" className="group flex items-center shrink-0 h-9 sm:h-11">
+            <Image
+              src="/rusteakdotlogo.png"
+              alt="RUSTEAK DOT"
+              width={200}
+              height={188}
+              priority
+              className="h-9 sm:h-11 w-auto object-contain mix-blend-multiply scale-125 sm:scale-[1.35] origin-left transition-transform duration-300 group-hover:scale-[1.4]"
+            />
           </Link>
 
           {/* Desktop Navigation (Center - Clean & Spacious) */}
